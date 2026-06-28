@@ -185,22 +185,20 @@
     const ex = px(box, I1), ey = py(box, happy(I1, p));
     ctx.fillStyle = col; ctx.beginPath(); ctx.arc(ex, ey, 4.5, 0, 7); ctx.fill();
     ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.stroke();
-    readout(t, p);
+    readout(t);
   }
 
-  function readout(t, p) {
-    const below = happy(KNOT, p) - happy(I0, p);
-    const above = happy(I1, p) - happy(KNOT, p);
+  function readout(t) {
     let v, d;
     if (t < 0.22) {
       v = "Money helps — then quietly stops.";
-      d = `Mood climbs until about $100k, then the line goes nearly flat (+${above.toFixed(1)} pts across the whole upper range). More income barely moves it.`;
+      d = "Mood climbs until about $100k, then the line goes nearly flat. More income barely moves it.";
     } else if (t < 0.6) {
       v = "Money keeps helping.";
-      d = `Each step up in income adds a little more mood — about +${below.toFixed(1)} points up to $100k and another +${above.toFixed(1)} beyond it. No plateau.`;
+      d = "Each step up in income adds a little more mood, all the way up. No plateau.";
     } else {
       v = "Money keeps helping — and speeds up.";
-      d = `For people who are usually good, mood rises faster above $100k (+${above.toFixed(1)} pts) than below it (+${below.toFixed(1)}). The opposite of a plateau.`;
+      d = "For people who are usually good, mood rises faster above $100k than below it — the opposite of a plateau.";
     }
     verdict.textContent = v; detail.textContent = d;
   }
