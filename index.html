@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Does money buy happiness? — A conflict resolved</title>
+<meta name="description" content="An interactive walk through Killingsworth, Kahneman & Mellers (2023): when more income keeps lifting mood, when it stops, and why two famous studies disagreed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2342408f'/%3E%3Cstop offset='.5' stop-color='%23c65c84'/%3E%3Cstop offset='1' stop-color='%23f0b24a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,7000&family=Spline+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- progress rail painted with the mood gradient -->
+<div class="progress" aria-hidden="true"><span id="progressFill"></span></div>
+
+<!-- ░░ HERO ░░ -->
+<header class="hero">
+  <p class="kicker">Experience sampling · 1,725,994 moments</p>
+  <h1 class="hero__q">How do you<br>feel right now?</h1>
+
+  <figure class="esm" id="esm">
+    <input class="esm__range" id="esmRange" type="range" min="0" max="100" value="58"
+           aria-label="Slide to report how you feel right now, from very bad to very good">
+    <figcaption class="esm__scale">
+      <span>Very bad</span><span>Very good</span>
+    </figcaption>
+    <p class="esm__echo" id="esmEcho" aria-live="polite">Slide it. This is the exact question the study asked.</p>
+  </figure>
+
+  <p class="hero__lede">
+    Thirty-three thousand people answered that question on their phones, three times a day, for weeks.
+    Researchers used the 1.7&nbsp;million answers to settle an old fight:
+    <strong>does more money keep making us happier, or does it stop mattering?</strong>
+  </p>
+  <p class="hero__scroll" aria-hidden="true">Scroll ↓</p>
+</header>
+
+<main>
+
+<!-- ░░ THE CONFLICT ░░ -->
+<section class="band" data-reveal>
+  <p class="eyebrow">The conflict</p>
+  <h2 class="h2">Two famous studies. Opposite answers.</h2>
+  <p class="prose">
+    Both were published in the same journal. Both used real data from thousands of Americans.
+    They could not both be right.
+  </p>
+
+  <div class="duo">
+    <article class="claim">
+      <svg class="claim__plot" viewBox="0 0 200 120" aria-hidden="true">
+        <path d="M10,105 C50,60 70,42 100,40 C140,38 170,38 190,38" class="claim__curve claim__curve--flat"/>
+      </svg>
+      <h3 class="claim__who">Kahneman &amp; Deaton<span>2010</span></h3>
+      <p class="claim__txt">Happiness climbs with income, then <strong>flattens around $75,000</strong>. Past that, more money buys no more day-to-day well-being.</p>
+    </article>
+
+    <article class="claim">
+      <svg class="claim__plot" viewBox="0 0 200 120" aria-hidden="true">
+        <path d="M10,108 C60,86 120,52 190,18" class="claim__curve claim__curve--rise"/>
+      </svg>
+      <h3 class="claim__who">Killingsworth<span>2021</span></h3>
+      <p class="claim__txt">Happiness keeps rising with income — <strong>steadily, well past $200,000</strong>. No plateau in sight.</p>
+    </article>
+  </div>
+
+  <p class="prose prose--tight">
+    The "$75,000 plateau" became one of the most-quoted facts in psychology. The second study seemed to demolish it.
+    So in 2022 the two camps did something unusual: they teamed up to find out who was right.
+  </p>
+</section>
+
+<!-- ░░ THE REANALYSIS ░░ -->
+<section class="band band--ink" data-reveal>
+  <p class="eyebrow eyebrow--light">The reanalysis</p>
+  <h2 class="h2 h2--light">An argument, run as an experiment.</h2>
+  <p class="prose prose--light">
+    Daniel Kahneman (the "plateau" author) and Matthew Killingsworth (the "keeps rising" author) ran a joint
+    re-analysis, with a third researcher, Barbara Mellers, as a neutral referee. They call it
+    <em>adversarial collaboration</em>: disagree first, then go find the answer together.
+  </p>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat__num" data-count="1725994">1,725,994</span>
+      <span class="stat__lbl">momentary reports</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="33391">33,391</span>
+      <span class="stat__lbl">people</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="3">3&times;</span>
+      <span class="stat__lbl">a day, at random</span>
+    </div>
+  </div>
+  <p class="prose prose--light prose--tight">
+    Each buzz asked the same thing you answered at the top — <em>how do you feel right now?</em> — on a smooth
+    slider, not a yes/no box. That detail turns out to matter enormously.
+  </p>
+</section>
+
+<!-- ░░ THE RESOLUTION — centerpiece ░░ -->
+<section class="band" data-reveal>
+  <p class="eyebrow">The resolution</p>
+  <h2 class="h2">It depends who you already are.</h2>
+  <p class="prose">
+    When they split people by how happy they tend to be, the single curve broke into a family of curves.
+    Drag the dial below from <em>often down</em> to <em>usually good</em>, and watch how the very same dollars
+    do completely different things.
+  </p>
+
+  <figure class="chart">
+    <canvas id="mainChart" class="chart__canvas" role="img"
+      aria-label="Income on the horizontal axis from fifteen thousand to five hundred thousand dollars; mood on the vertical axis. The highlighted curve changes shape as you move the baseline dial."></canvas>
+
+    <div class="dial">
+      <label class="dial__label" for="baseline">Your baseline mood</label>
+      <input id="baseline" class="dial__range" type="range" min="0" max="100" value="50"
+             aria-describedby="dialReadout">
+      <div class="dial__ends"><span>often down</span><span>usually good</span></div>
+    </div>
+
+    <figcaption class="chart__read" id="dialReadout" aria-live="polite">
+      <span class="chart__verdict" id="verdict">—</span>
+      <span class="chart__detail" id="detail"></span>
+    </figcaption>
+  </figure>
+
+  <p class="prose prose--tight">
+    For the <strong>happiest people, money keeps working — and even speeds up</strong> past $100,000.
+    For people in the <strong>middle, it keeps helping</strong>, gently. Only at the bottom does the famous
+    plateau appear. Averaging everyone together hid all three patterns inside one tidy line.
+  </p>
+</section>
+
+<!-- ░░ THE CATCH (unhappy minority + label flip) ░░ -->
+<section class="band band--tint" data-reveal>
+  <p class="eyebrow">The catch</p>
+  <h2 class="h2">Where money quietly stops.</h2>
+  <p class="prose">
+    For the least-happy fifth of people, more income relieves real distress — but only up to about
+    <strong>$100,000</strong>. Beyond that, the line goes flat. Some kinds of unhappiness don't have a price:
+    heartbreak, loss, loneliness, depression.
+  </p>
+  <p class="prose">
+    That's also the key to the original mistake. The 2010 study asked yes/no mood questions that almost everyone
+    answered "yes" to — so it could only really detect <em>un</em>happiness. And unhappiness <em>does</em> plateau.
+    Flip the label, and the old "$75k" finding turns out to be right — just about a different thing.
+  </p>
+
+  <figure class="flip">
+    <div class="flip__toggle" role="tablist" aria-label="Choose what the line measures">
+      <button class="flip__btn is-active" id="flipHappy" role="tab" aria-selected="true">Happiness</button>
+      <button class="flip__btn" id="flipUnhappy" role="tab" aria-selected="false">Unhappiness</button>
+    </div>
+    <canvas id="flipChart" class="flip__canvas" role="img"
+      aria-label="The same data shown two ways: happiness rising with income, or unhappiness falling then flattening near one hundred thousand dollars."></canvas>
+    <figcaption class="flip__cap" id="flipCap">
+      Measured as <strong>happiness</strong>, the line keeps climbing for most people. No plateau.
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ░░ THE REALITY CHECK ░░ -->
+<section class="band" data-reveal>
+  <p class="eyebrow">The reality check</p>
+  <h2 class="h2">Real — but smaller than you'd think.</h2>
+  <p class="prose">
+    Money genuinely moves mood. It just doesn't move it much. Across a more-than-fourfold jump in income —
+    from $15,000 to $250,000 — average happiness shifts only about <strong>four points on a 100-point scale</strong>.
+    For comparison, the authors line that up against other ordinary parts of a day:
+  </p>
+
+  <div class="bars" id="bars">
+    <div class="bar"><span class="bar__lbl">A 4&times; jump in income</span><span class="bar__track"><span class="bar__fill" style="--w:30%"></span></span></div>
+    <div class="bar"><span class="bar__lbl">Being a caregiver</span><span class="bar__track"><span class="bar__fill" style="--w:30%"></span></span></div>
+    <div class="bar"><span class="bar__lbl">It being the weekend</span><span class="bar__track"><span class="bar__fill" style="--w:60%"></span></span></div>
+    <div class="bar"><span class="bar__lbl">Having a headache</span><span class="bar__track"><span class="bar__fill" style="--w:100%"></span></span></div>
+  </div>
+  <p class="prose prose--tight">
+    A fourfold raise feels about like avoiding a headache. Income is one modest ingredient of a good day —
+    not the recipe.
+  </p>
+</section>
+
+<!-- ░░ HOW THEY SETTLED IT ░░ -->
+<section class="band band--ink" data-reveal>
+  <p class="eyebrow eyebrow--light">How they settled it</p>
+  <h2 class="h2 h2--light">Two rivals, one honest answer.</h2>
+  <p class="prose prose--light">
+    The quiet hero of this paper isn't a number — it's the method. Two scientists who'd staked their names on
+    opposite claims sat down with each other's data, agreed in advance what would count as evidence, and let the
+    analysis decide. Both turned out to be partly right. One publicly revised a famous conclusion.
+  </p>
+  <blockquote class="pull">
+    "We benefited from luck… the close correspondence we found is a better result than social scientists can
+    reasonably expect, even when their hypotheses are correct."
+    <cite>— Killingsworth, Kahneman &amp; Mellers, 2023</cite>
+  </blockquote>
+</section>
+
+<!-- ░░ READ THE PAPER ░░ -->
+<section class="band band--paper" data-reveal>
+  <p class="eyebrow">The source</p>
+  <h2 class="h2">Read the whole thing.</h2>
+  <p class="prose">
+    Everything above is a retelling. Here's the paper itself — six pages, open access. The charts you just played
+    with are reconstructions of its Figure&nbsp;2 and Table&nbsp;1.
+  </p>
+  <p class="cite">
+    Killingsworth, M. A., Kahneman, D., &amp; Mellers, B. (2023). <em>Income and emotional well-being: A conflict
+    resolved.</em> PNAS, 120(10), e2208661120.
+    <a href="https://doi.org/10.1073/pnas.2208661120" target="_blank" rel="noopener">doi.org/10.1073/pnas.2208661120</a>
+  </p>
+
+  <div class="paper__actions">
+    <a class="btn btn--solid" href="paper.pdf" target="_blank" rel="noopener">Open PDF in a new tab ↗</a>
+    <a class="btn" href="paper.pdf" download>Download</a>
+  </div>
+
+  <div class="reader" id="reader" aria-label="Full paper, rendered page by page">
+    <p class="reader__hint" id="readerHint">Loading the paper…</p>
+    <div id="readerPages"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>An interactive retelling, built for the phone. Paper © the authors, CC&nbsp;BY-NC-ND&nbsp;4.0.
+  Data: <a href="https://osf.io/qye4a" target="_blank" rel="noopener">osf.io/qye4a</a>.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
