@@ -237,6 +237,23 @@ a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px;text-dec
 .ink-key{color:var(--m-mid);font-weight:600}
 
 /* ════════════════════════════════════════════════════════════
+   FINDINGS — conclusions list
+   ════════════════════════════════════════════════════════════ */
+.findings{margin:2rem auto 0;max-width:var(--measure)}
+.finding{padding:1.5rem 0;border-top:1px solid var(--line)}
+.finding:last-child{border-bottom:1px solid var(--line)}
+.finding__lead{
+  display:flex;gap:.7rem;align-items:baseline;margin:0 0 .5rem;
+  font-family:var(--serif);font-weight:600;font-size:1.18rem;line-height:1.22;
+  font-variation-settings:"opsz" 60,"SOFT" 30;
+}
+.finding__lead::before{
+  content:"";flex:0 0 auto;width:12px;height:12px;border-radius:3px;
+  background:var(--grad);transform:translateY(2px);
+}
+.finding__txt{margin:0;color:var(--ink-70);font-size:.98rem}
+
+/* ════════════════════════════════════════════════════════════
    PULL QUOTE
    ════════════════════════════════════════════════════════════ */
 .pull{
