@@ -257,6 +257,17 @@
   boot();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
 
+  /* ── explain-like-I'm-5 toggle ─────────────────────────── */
+  const eBtn = $("#eli5Btn"), ePanel = $("#eli5Panel");
+  if (eBtn && ePanel) {
+    eBtn.addEventListener("click", () => {
+      const open = eBtn.getAttribute("aria-expanded") === "true";
+      eBtn.setAttribute("aria-expanded", String(!open));
+      ePanel.hidden = open;
+      eBtn.firstChild.textContent = open ? "Explain it like I'm 5 " : "Hide the simple version ";
+    });
+  }
+
   /* ════════════════════════════════════════════════════════
      PDF reader — lazy render via pdf.js
      ════════════════════════════════════════════════════════ */
